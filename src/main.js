@@ -1,6 +1,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+// 导入项目的公共样式
+import '@/assets/common.css'
+
+// 使用element-ui的插件
+Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
