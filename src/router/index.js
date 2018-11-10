@@ -19,11 +19,15 @@ const router = new Router({
     },
     {
       path: '/home',
-      component: Home
-    },
-    {
-      path: '/users',
-      components: Users
+      component: Home,
+      children: [
+        // 嵌套路由1: 通过children给某个路由配置子路由
+        // 嵌套路由2: 给子路由配置一个出口
+        {
+          path: '/users',
+          component: Users
+        }
+      ]
     }
   ]
 })
