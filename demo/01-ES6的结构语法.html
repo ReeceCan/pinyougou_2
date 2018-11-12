@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.  数组解构
+      // let n1 = 1
+      // let n2 = 2
+
+      let [n1, n2, n3] = [1, 2]
+      console.log(n1) // 1
+      console.log(n2) // 2
+      console.log(n3) // undefind
+
+      // 2. 对象解构
+
+      // 2.1 基础用法
+      let obj = {
+        name: 'zs',
+        age: 18
+      }
+
+      let { name, age } = obj
+      console.log(name, age) // zs,18
+
+      // 2.2 给结构起别名
+      // 解构的变量名是后面的, 前面的属性名是进行匹配的
+      let { name: name1, age: age1 } = { name: 'zs', age: 18 }
+      console.log(name1, age1)
+
+      // 2.3 复杂对象
+      let res = {
+        meta: {
+          status: 200,
+          msg: '哈哈'
+        },
+        data: {
+          total: 1000,
+          user: 'zs'
+        }
+      }
+
+      let {
+        meta: { status },
+        data: { total }
+      } = res
+      console.log(status)
+      console.log(total)
+
+      // 解构函数参数
+
+      function fn({ meta, data }) {
+        console.log(meta, data)
+      }
+      fn(res)
+    </script>
+  </body>
+</html>
